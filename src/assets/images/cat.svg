@@ -1,0 +1,44 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cat Body -->
+  <ellipse cx="100" cy="120" rx="45" ry="35" fill="#ff8c42" stroke="#e67e22" stroke-width="2"/>
+
+  <!-- Cat Head -->
+  <circle cx="100" cy="70" r="35" fill="#ff8c42" stroke="#e67e22" stroke-width="2"/>
+
+  <!-- Cat Ears -->
+  <polygon points="75,45 85,25 95,45" fill="#ff8c42" stroke="#e67e22" stroke-width="2"/>
+  <polygon points="105,45 115,25 125,45" fill="#ff8c42" stroke="#e67e22" stroke-width="2"/>
+  <polygon points="78,42 85,30 92,42" fill="#ff6b6b"/>
+  <polygon points="108,42 115,30 122,42" fill="#ff6b6b"/>
+
+  <!-- Cat Eyes -->
+  <ellipse cx="90" cy="65" rx="8" ry="12" fill="#2c3e50"/>
+  <ellipse cx="110" cy="65" rx="8" ry="12" fill="#2c3e50"/>
+  <ellipse cx="90" cy="62" rx="3" ry="5" fill="#ecf0f1"/>
+  <ellipse cx="110" cy="62" rx="3" ry="5" fill="#ecf0f1"/>
+
+  <!-- Cat Nose -->
+  <polygon points="100,75 95,82 105,82" fill="#ff6b6b"/>
+
+  <!-- Cat Mouth -->
+  <path d="M 100 82 Q 95 88 90 85" stroke="#2c3e50" stroke-width="2" fill="none"/>
+  <path d="M 100 82 Q 105 88 110 85" stroke="#2c3e50" stroke-width="2" fill="none"/>
+
+  <!-- Cat Whiskers -->
+  <line x1="65" y1="70" x2="85" y2="75" stroke="#2c3e50" stroke-width="2"/>
+  <line x1="65" y1="80" x2="85" y2="80" stroke="#2c3e50" stroke-width="2"/>
+  <line x1="115" y1="75" x2="135" y2="70" stroke="#2c3e50" stroke-width="2"/>
+  <line x1="115" y1="80" x2="135" y2="80" stroke="#2c3e50" stroke-width="2"/>
+
+  <!-- Cat Paws -->
+  <circle cx="75" cy="150" r="12" fill="#ff8c42" stroke="#e67e22" stroke-width="2"/>
+  <circle cx="125" cy="150" r="12" fill="#ff8c42" stroke="#e67e22" stroke-width="2"/>
+
+  <!-- Cat Tail -->
+  <path d="M 145 120 Q 165 100 160 80 Q 155 60 170 50" stroke="#ff8c42" stroke-width="8" fill="none"/>
+
+  <!-- Cat Stripes -->
+  <ellipse cx="100" cy="110" rx="25" ry="4" fill="#e67e22" opacity="0.7"/>
+  <ellipse cx="100" cy="125" rx="30" ry="4" fill="#e67e22" opacity="0.7"/>
+  <ellipse cx="100" cy="140" rx="25" ry="4" fill="#e67e22" opacity="0.7"/>
+</svg>

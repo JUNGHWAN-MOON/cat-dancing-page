@@ -1,0 +1,286 @@
+/* Dancing Cat Animations */
+
+@keyframes catDance {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  10% {
+    transform: translateY(-15px) rotate(-5deg) scale(1.05);
+  }
+  20% {
+    transform: translateY(-10px) rotate(5deg) scale(0.95);
+  }
+  30% {
+    transform: translateY(-20px) rotate(-3deg) scale(1.1);
+  }
+  40% {
+    transform: translateY(0px) rotate(3deg) scale(0.9);
+  }
+  50% {
+    transform: translateY(-25px) rotate(0deg) scale(1.15);
+  }
+  60% {
+    transform: translateY(-5px) rotate(-8deg) scale(0.85);
+  }
+  70% {
+    transform: translateY(-15px) rotate(8deg) scale(1.05);
+  }
+  80% {
+    transform: translateY(-10px) rotate(-2deg) scale(0.95);
+  }
+  90% {
+    transform: translateY(-20px) rotate(2deg) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Cat Container Styles */
+.dancing-cat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.cat-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.cat-wrapper.dancing {
+  animation: catDance 2s infinite ease-in-out;
+}
+
+.cat-image {
+  width: 200px;
+  height: 200px;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+}
+
+.cat-wrapper.dancing .cat-image {
+  animation: wiggle 0.5s infinite ease-in-out alternate;
+}
+
+/* Control Panel Styles */
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.animation-control-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+  border: none;
+  border-radius: 25px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(255, 107, 107, 0.3);
+  transition: all 0.3s ease;
+  transform: translateY(0);
+  min-width: 160px;
+}
+
+.animation-control-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(255, 107, 107, 0.4);
+  animation: pulse 0.6s infinite;
+}
+
+.animation-control-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(255, 107, 107, 0.3);
+}
+
+.animation-control-btn:focus {
+  outline: 3px solid rgba(255, 107, 107, 0.5);
+  outline-offset: 2px;
+}
+
+/* Stats and Information */
+.stats {
+  text-align: center;
+  color: white;
+  opacity: 0.9;
+}
+
+.stats p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.keyboard-hint {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.keyboard-hint kbd {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 12px;
+  margin: 0 2px;
+}
+
+/* Floating Animation for Background Elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Performance Optimizations */
+.cat-wrapper.dancing,
+.cat-wrapper.dancing .cat-image {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dancing-cat-container {
+    padding: 15px;
+    gap: 20px;
+  }
+
+  .cat-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .animation-control-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dancing-cat-container {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .cat-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .animation-control-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    min-width: 140px;
+  }
+
+  .control-panel {
+    gap: 15px;
+  }
+
+  .stats p {
+    font-size: 12px;
+  }
+
+  .keyboard-hint {
+    padding: 6px 12px;
+  }
+
+  .keyboard-hint kbd {
+    font-size: 10px;
+    padding: 1px 4px;
+  }
+
+  @keyframes catDance {
+    0% {
+      transform: translateY(0) rotate(0deg) scale(1);
+    }
+    10% {
+      transform: translateY(-10px) rotate(-3deg) scale(1.03);
+    }
+    20% {
+      transform: translateY(-5px) rotate(3deg) scale(0.97);
+    }
+    30% {
+      transform: translateY(-15px) rotate(-2deg) scale(1.05);
+    }
+    40% {
+      transform: translateY(0px) rotate(2deg) scale(0.95);
+    }
+    50% {
+      transform: translateY(-18px) rotate(0deg) scale(1.08);
+    }
+    60% {
+      transform: translateY(-3px) rotate(-5deg) scale(0.92);
+    }
+    70% {
+      transform: translateY(-10px) rotate(5deg) scale(1.03);
+    }
+    80% {
+      transform: translateY(-5px) rotate(-1deg) scale(0.97);
+    }
+    90% {
+      transform: translateY(-15px) rotate(1deg) scale(1.05);
+    }
+    100% {
+      transform: translateY(0) rotate(0deg) scale(1);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .cat-image {
+    width: 250px;
+    height: 250px;
+  }
+
+  .animation-control-btn {
+    padding: 18px 36px;
+    font-size: 20px;
+  }
+}
